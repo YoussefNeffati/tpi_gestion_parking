@@ -54,3 +54,52 @@
     transform: rotate(360deg);
   }
 }
+
+.contact-form-wrapper{
+  background:red;
+}
+.form-group {
+display: flex;
+flex-flow: column-reverse;
+}
+
+.form-group:not(:last-child) {
+margin-bottom: 2rem; }
+
+.form-input{
+font-size: 1.5rem;
+font-family: inherit;
+color: inherit;
+padding: 0.5rem 2rem;
+border-radius: 2px;
+background-color: rgba(255, 255, 255, 0.5);
+border: none;
+border-bottom: 3px solid transparent;
+width: 90%;
+display: block;
+transition: all .3s;
+}
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid red !important; }
+  
+.form-input:focus:valid {
+  border-bottom: 3px solid #4CAF50 !important; }
+  
+.form-input::-webkit-input-placeholder {
+  color: #B0BEC5; }
+
+.form-label {
+font-size: 1.2rem;
+font-weight: 500;
+margin-left: 2rem;
+display: block;
+transition: all .3s; }
+
+.form-input:placeholder-shown + .form-label {
+opacity: 0;
+visibility: hidden;
+transform: translateY(2rem); }
+
+
