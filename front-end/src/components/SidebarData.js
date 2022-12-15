@@ -1,9 +1,11 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+// import * as MdManageAccounts from "react-icons/fa";
 import * as IoIcons from 'react-icons/io';
 
 export const SidebarData = [
+  
   {
     title: 'Home',
     path: '/',
@@ -11,21 +13,21 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Reports',
+    title: 'Manage park',
     path: '/report',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
-    title: 'About',
-    path: '/about',
-    icon: <FaIcons.FaCartPlus />,
+    title: 'Galery',
+    path: '/galery',
+    icon: <AiIcons.AiOutlinePicture />,
     cName: 'nav-text'
   },
   {
     title: 'User',
     path: '/user',
-    icon: <IoIcons.IoMdPeople />,
+    icon: <AiIcons.AiOutlineUsergroupAdd />,
     cName: 'nav-text'
   },
   {
@@ -38,6 +40,12 @@ export const SidebarData = [
     title: 'Support',
     path: '/support',
     icon: <IoIcons.IoMdHelpCircle />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Logout',
+    path: '/logout',
+    icon: <AiIcons.AiOutlineLogout />,
     cName: 'nav-text'
   }
 ];

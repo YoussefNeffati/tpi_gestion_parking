@@ -4,7 +4,7 @@ import Chart from "react-apexcharts";
 // import {Container, Row, Col} from 'react-bootstrap';
 
 const Home = () => {
-  const [state, setState] = useState({
+  const [state] = useState({
     options: {
       colors: ["#E91E63", "#FF9800", "teal"],
       chart: {

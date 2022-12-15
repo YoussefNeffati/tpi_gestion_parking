@@ -4,10 +4,8 @@ import { request } from '../lib/request';
 import ErrorMessage from '../components/ErrorMessage';
 import SuccessMessage from '../components/SucessMessage';
 import {
-	Flex,
-	Box,
+	
 	Heading,
-	FormControl,
 	FormLabel,
 	Input,
 	Button,
@@ -28,7 +26,6 @@ const User = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [role, setRole] = useState('client');
-	const [themeChoice, setThemeChoice] = useState('dark');
 	const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 	const user = useState({
