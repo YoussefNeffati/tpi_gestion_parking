@@ -19,7 +19,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Galery',
+    title: 'Dashboard',
     path: '/galery',
     icon: <AiIcons.AiOutlinePicture />,
     cName: 'nav-text'
@@ -31,7 +31,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Notifications',
+    title: 'Streaming',
     path: '/notifications',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
