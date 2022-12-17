@@ -7,7 +7,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-.home,
+
 .reports,
 .products {
   display: flex;
@@ -16,3 +16,94 @@
   justify-content: center;
   font-size: 3rem;
 }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-form-wrapper{
+  background:red;
+}
+.form-group {
+display: flex;
+flex-flow: column-reverse;
+}
+
+.form-group:not(:last-child) {
+margin-bottom: 2rem; }
+
+.form-input{
+font-size: 1.5rem;
+font-family: inherit;
+color: inherit;
+padding: 0.5rem 2rem;
+border-radius: 2px;
+background-color: rgba(255, 255, 255, 0.5);
+border: none;
+border-bottom: 3px solid transparent;
+width: 90%;
+display: block;
+transition: all .3s;
+}
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid red !important; }
+  
+.form-input:focus:valid {
+  border-bottom: 3px solid #4CAF50 !important; }
+  
+.form-input::-webkit-input-placeholder {
+  color: #B0BEC5; }
+
+.form-label {
+font-size: 1.2rem;
+font-weight: 500;
+margin-left: 2rem;
+display: block;
+transition: all .3s; }
+
+.form-input:placeholder-shown + .form-label {
+opacity: 0;
+visibility: hidden;
+transform: translateY(2rem); }
+
+
+.content{
+  transform: translateX(150px); /* Shift the content to the right by 250px */
+}
+ 
