@@ -65,6 +65,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    right: 250px;
   }
   
   span {

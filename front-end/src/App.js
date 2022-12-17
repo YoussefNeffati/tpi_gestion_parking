@@ -14,6 +14,7 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <div class="content">
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/report' component={Report} />
@@ -22,6 +23,7 @@ function App() {
           <Route path='/support' component={Supports} />
           <Route path='/galery' component={Galery} />
         </Switch>
+        </div>
       </Router>
     </>
   );

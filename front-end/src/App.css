@@ -103,3 +103,7 @@ visibility: hidden;
 transform: translateY(2rem); }
 
 
+.content{
+  transform: translateX(150px); /* Shift the content to the right by 250px */
+}
+ 

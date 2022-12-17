@@ -3,18 +3,11 @@ import { request } from '../lib/request';
 // import { NavPixer } from '../components/NavPixer';
 import ErrorMessage from '../components/ErrorMessage';
 import SuccessMessage from '../components/SucessMessage';
-import {
-	
-	Heading,
-	FormLabel,
-	Input,
-	Button,
-	InputGroup,
-	InputRightElement,
-	CircularProgress,
-	Select,
-} from '@chakra-ui/react';
+import { Heading, FormLabel, FormControl, Input, Button, InputGroup, InputRightElement, Select } from '@chakra-ui/react';
+import { CircularProgress } from '@chakra-ui/react'
+
 import { ViewOffIcon, ViewIcon } from '@chakra-ui/icons'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const User = () => {
 	const [error, setError] = useState('');
@@ -45,9 +38,9 @@ const User = () => {
 			await request.post('http://localhost:8080/signup', user)
 				.then((resp) => resp.data);
 			setIsLoading(false);
-			setSuccess('Compte '+user.username+' a été créé');
+			setSuccess('Compte ' + user.username + ' a été créé');
 			setError("");
-			sleep(1000).then(window.location.href='/login');
+			sleep(1000).then(window.location.href = '/login');
 		} catch (error) {
 			setError('Username already taken');
 			setIsLoading(false);
@@ -58,6 +51,7 @@ const User = () => {
 
 	return (
 		<div className='container'>
+			<ChakraProvider>
 				<div className="row">
 					<div className="col-6">
 						<Heading>Créer un compte</Heading>
@@ -67,38 +61,44 @@ const User = () => {
 							{error && <ErrorMessage message={error} />}
 							{success && <SuccessMessage message={success} />}
 							<div className='form-group'>
-								<FormLabel>Username</FormLabel>
-								<Input
-									type="text"
-									placeholder="username"
-									size="lg"
-									name="username"
-									onChange={event => setUsername(event.currentTarget.value)}
-								/>
-							</div>
-							<div className='form-group'>
-								<FormLabel>Password</FormLabel>
-								<InputGroup>
+								<FormControl>
+									<FormLabel>Username</FormLabel>
 									<Input
-										type={showPassword ? 'text' : 'password'}
-										placeholder="*******"
+										type="text"
+										placeholder="username"
 										size="lg"
-										name="password"
-										onChange={event => setPassword(event.currentTarget.value)}
+										name="username"
+										onChange={event => setUsername(event.currentTarget.value)}
 									/>
-									<InputRightElement width="3rem" height="100%">
-										<Button size="sm" onClick={handlePasswordVisibility}>
-											{showPassword ? <ViewOffIcon /> : <ViewIcon />}
-										</Button>
-									</InputRightElement>
-								</InputGroup>
+								</FormControl>
 							</div>
 							<div className='form-group'>
-								<FormLabel>Rôle</FormLabel>
-								<Select onChange={event => setRole(event.currentTarget.value)}>
-									<option>user</option>
-									<option>admin</option>
-								</Select>
+								<FormControl>
+									<FormLabel>Password</FormLabel>
+									<InputGroup>
+										<Input
+											type={showPassword ? 'text' : 'password'}
+											placeholder="*******"
+											size="lg"
+											name="password"
+											onChange={event => setPassword(event.currentTarget.value)}
+										/>
+										<InputRightElement width="3rem" height="100%">
+											<Button size="sm" onClick={handlePasswordVisibility}>
+												{showPassword ? <ViewOffIcon /> : <ViewIcon />}
+											</Button>
+										</InputRightElement>
+									</InputGroup>
+								</FormControl>
+							</div>
+							<div className='form-group'>
+								<FormControl>
+									<FormLabel>Rôle</FormLabel>
+									<Select onChange={event => setRole(event.currentTarget.value)}>
+										<option>user</option>
+										<option>admin</option>
+									</Select>
+								</FormControl>
 							</div>
 							<Button
 								variantcolor="teal"
@@ -119,8 +119,9 @@ const User = () => {
 							</Button>
 						</form>
 					</div>
-			</div>
-        </div>
+				</div>
+			</ChakraProvider>
+		</div>
 	);
 };
 export default User;
